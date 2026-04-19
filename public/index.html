@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>Minha IA</title>
 
+  <!-- MOBILE FIX -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       margin: 0;
@@ -17,7 +20,7 @@
 
     .chat {
       flex: 1;
-      padding: 20px;
+      padding: 15px;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
@@ -25,12 +28,13 @@
     }
 
     .msg {
-      max-width: 70%;
+      max-width: 75%;
       padding: 12px;
       border-radius: 12px;
       line-height: 1.4;
       word-wrap: break-word;
-      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(10px);
     }
 
     .user {
@@ -50,24 +54,26 @@
 
     .input-area {
       display: flex;
-      padding: 10px;
+      gap: 10px;
+      padding: 12px;
       background: #020617;
+      position: sticky;
+      bottom: 0;
     }
 
     input {
       flex: 1;
-      padding: 12px;
+      padding: 14px;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       outline: none;
       font-size: 16px;
     }
 
     button {
-      margin-left: 10px;
-      padding: 12px;
+      padding: 14px 18px;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       background: #2563eb;
       color: white;
       cursor: pointer;
@@ -78,14 +84,19 @@
       background: #1d4ed8;
     }
 
-    /* RESPONSIVO */
+    /* MOBILE */
     @media (max-width: 600px) {
       .msg {
         max-width: 90%;
+        font-size: 15px;
       }
 
       input {
-        font-size: 14px;
+        padding: 16px;
+      }
+
+      button {
+        padding: 16px;
       }
     }
   </style>

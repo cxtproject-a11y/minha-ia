@@ -4,14 +4,11 @@ const input = document.getElementById("input");
 function adicionarMensagem(texto, classe) {
   const div = document.createElement("div");
   div.className = "msg " + classe;
-
-  // animação
-  div.style.opacity = "0";
-  div.style.transform = "translateY(10px)";
-
   div.innerText = texto;
+
   chat.appendChild(div);
 
+  // animação
   setTimeout(() => {
     div.style.transition = "all 0.3s ease";
     div.style.opacity = "1";
@@ -55,9 +52,10 @@ async function enviar() {
   }
 }
 
-// ENTER pra enviar
-input.addEventListener("keypress", function (e) {
+// ENTER ENVIA (PC + CELULAR)
+input.addEventListener("keydown", function (e) {
   if (e.key === "Enter") {
+    e.preventDefault();
     enviar();
   }
 });
